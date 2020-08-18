@@ -1,0 +1,29 @@
+<div class="container">
+    <form [formGroup]="userForm" (submit)="submit()">
+        <div class="row">
+            <div class="col-12 form-group">
+                <label for="firstName">First Name</label>
+                <input class="form-control" type="text" id="firstName" name="firstName" formControlName="firstName"
+                    [class]="{'invalid' : userForm.get('firstName').invalid && userForm.dirty}">
+            </div>
+            <div class="col-12 form-group">
+                <label for="lastName">Last Name</label>
+                <input class="form-control" type="text" id="lastName" name="lastName" formControlName="lastName">
+            </div>
+            <div class="col-12 form-group">
+                <label for="email">Email</label>
+                <input class="form-control" type="text" id="email" name="email" formControlName="email">
+            </div>
+            <div class="col-12 form-group">
+                <label for="phone">Phone</label>
+                <input class="form-control" type="text" id="phone" name="phone" formControlName="phone">
+            </div>
+            <div class="col-12 form-group">
+                <label for="created">Created</label>
+                <input class="form-control" type="text" id="created" name="created" formControlName="created">
+            </div>
+        </div>
+    </form>
+    <button class="btn btn-success" type="submit" (click)="test()">Submit</button>
+    <app-btn text="Submit" [loading]="false" klass="btn-warning" (clickedMe)="test()"></app-btn>
+</div>
